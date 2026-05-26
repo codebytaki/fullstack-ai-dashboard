@@ -35,6 +35,22 @@
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard - Light Mode
+![Dashboard Light Mode](./photo/Dashboard%20-%20Light%20Mode.png)
+
+### Dashboard - Dark Mode
+![Dashboard Dark Mode](./photo/Dashboard%20-%20Dark%20Mode.png)
+
+### Analytics View
+![Analytics View](./photo/Analytics%20View.png)
+
+### AI Chat Assistant
+![AI Chat Assistant](./photo/AI%20Chat%20Assistant.png)
+
+---
+
 ## ✨ Features
 
 ### 🎨 **Modern UI/UX**
@@ -123,29 +139,6 @@
 - 📊 **Grafana** - Monitoring
 - 🔍 **Sentry** - Error tracking
 - 📝 **Swagger** - API docs
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Dashboard - Light Mode
-![Dashboard Light](./frontend/public/screenshots/dashboard-light.png)
-
-### Dashboard - Dark Mode
-![Dashboard Dark](./frontend/public/screenshots/dashboard-dark.png)
-
-### AI Chat Assistant
-![AI Chat](./frontend/public/screenshots/ai-chat.png)
-
-### Analytics View
-![Analytics](./frontend/public/screenshots/analytics.png)
-
-### Mobile Responsive
-<img src="./frontend/public/screenshots/mobile-view.png" width="300" alt="Mobile View">
-
-</div>
 
 ---
 
