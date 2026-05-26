@@ -1,15 +1,12 @@
-/**
- * TypeScript type definitions
- */
-
 export interface User {
     id: number
     username: string
     email: string
     full_name?: string
     is_active: boolean
-    role: string
+    role: 'admin' | 'user' | 'viewer'
     created_at: string
+    avatar?: string
 }
 
 export interface DashboardStats {
@@ -20,8 +17,8 @@ export interface DashboardStats {
     uptime: string
     cpu_usage: number
     memory_usage: number
-    response_time?: number
-    error_rate?: number
+    response_time: number
+    error_rate: number
 }
 
 export interface AnalyticsData {
@@ -29,8 +26,8 @@ export interface AnalyticsData {
     users: number
     requests: number
     ai_queries: number
-    revenue?: number
-    conversion_rate?: number
+    revenue: number
+    conversion_rate: number
 }
 
 export interface AIInsight {
@@ -81,7 +78,7 @@ export interface LoginResponse {
 
 export interface AIQueryRequest {
     query: string
-    context?: any
+    context?: Record<string, unknown>
     user_id?: string
 }
 
@@ -92,4 +89,28 @@ export interface AIQueryResponse {
     timestamp: string
     sources?: string[]
     suggestions?: string[]
+}
+
+export interface ChatMessage {
+    id: string
+    role: 'user' | 'assistant'
+    content: string
+    timestamp: string
+    confidence?: number
+    sources?: string[]
+    suggestions?: string[]
+}
+
+export interface WebSocketMessage {
+    type: 'stats_update' | 'connection' | 'alert' | 'notification'
+    data?: {
+        active_users?: number
+        requests_per_second?: number
+        cpu_usage?: number
+        memory_usage?: number
+        timestamp?: string
+    }
+    status?: string
+    user_id?: string
+    timestamp?: string
 }

@@ -28,6 +28,8 @@ ENV/
 backend/logs/
 backend/*.db
 backend/.env
+backend/app/__pycache__/
+backend/app/**/__pycache__/
 
 # Node
 node_modules/
@@ -65,8 +67,18 @@ coverage/
 *.cover
 .hypothesis/
 .pytest_cache/
+**/tests/
+**/__tests__/
+*.test.ts
+*.test.tsx
+*.test.js
+*.spec.ts
+*.spec.tsx
+*.spec.js
 
 # Misc
 *.bak
 *.tmp
 .cache/
+PROJECT_STRUCTURE.md
+THEME_UPDATE.md

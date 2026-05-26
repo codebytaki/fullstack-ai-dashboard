@@ -1,14 +1,1 @@
-/* Additional custom styles */
-.animate-spin {
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
+/* App-level styles — most styles live in index.css and Tailwind classes */
