@@ -10,7 +10,7 @@ export default function Chart() {
 
     const fetchAnalytics = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/analytics')
+            const response = await fetch('/api/analytics')
             const analyticsData = await response.json()
             setData(analyticsData.slice(-7)) // Last 7 days
         } catch (error) {

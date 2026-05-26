@@ -1,19 +1,35 @@
-# 🌐 Full-Stack AI Dashboard
+# 🚀 AI-Powered Full-Stack Dashboard
+
+## ✅ **PROJECT STATUS: FULLY OPERATIONAL**
+
+**🌐 Live Services:**
+- Frontend: http://localhost:5173 ✅
+- Backend: http://localhost:8000 ✅
+- API Docs: http://localhost:8000/api/docs ✅
+
+**🔐 Quick Login:** Username: `admin` | Password: `admin`
+
+**📚 Documentation:**
+- [Quick Start Guide](./QUICKSTART.md) - Get running in 5 minutes
+- [Status Report](./STATUS.md) - Detailed verification
+- [Build Summary](./SUMMARY.md) - What was built
+- [Deployment Guide](./DEPLOYMENT.md) - Production setup
+
+---
 
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
-![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?logo=fastapi)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?logo=typescript)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-3.3-38B2AC?logo=tailwind-css)
+![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-**Professional Full-Stack Dashboard with AI Integration**
+**A production-grade, AI-powered dashboard with real-time analytics, intelligent insights, and beautiful UI**
 
-A modern, production-ready web dashboard built with React, TypeScript, FastAPI, and TailwindCSS. Features real-time monitoring, AI-powered insights, and beautiful data visualizations.
-
-[Features](#-features) • [Quick Start](#-quick-start) • [Tech Stack](#-tech-stack) • [Screenshots](#-screenshots)
+[Live Demo](https://your-demo.com) • [Documentation](./docs) • [Report Bug](https://github.com/codebytaki/fullstack-ai-dashboard/issues) • [Request Feature](https://github.com/codebytaki/fullstack-ai-dashboard/issues)
 
 </div>
 
@@ -21,57 +37,144 @@ A modern, production-ready web dashboard built with React, TypeScript, FastAPI, 
 
 ## ✨ Features
 
-### 🎨 Modern UI/UX
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
-- **Dark/Light Mode** - Toggle between themes with smooth transitions
-- **Beautiful Components** - Professional UI components with TailwindCSS
-- **Smooth Animations** - Polished user experience with transitions
+### 🎨 **Modern UI/UX**
+- 🌓 **Dark/Light Mode** - Seamless theme switching with system preference detection
+- 📱 **Fully Responsive** - Perfect experience on desktop, tablet, and mobile
+- ✨ **Smooth Animations** - Powered by Framer Motion for delightful interactions
+- 🎯 **shadcn/ui Components** - Beautiful, accessible, and customizable components
+- 🎨 **TailwindCSS** - Utility-first CSS for rapid UI development
 
-### 📊 Real-time Monitoring
-- **Live Dashboard** - Real-time statistics and metrics
-- **WebSocket Updates** - Instant data synchronization
-- **Interactive Charts** - Dynamic visualizations with Recharts
-- **System Metrics** - CPU, memory, and network monitoring
+### 🤖 **AI-Powered Features**
+- 💬 **AI Chat Assistant** - Intelligent conversational AI with context awareness
+- 🧠 **RAG (Retrieval Augmented Generation)** - Enhanced responses with vector search
+- 📊 **Smart Analytics** - AI-driven insights and predictions
+- 🔍 **Semantic Search** - Find information using natural language
+- 📈 **Predictive Analytics** - Forecast trends and patterns
 
-### 🤖 AI Integration
-- **AI-Powered Insights** - Intelligent recommendations and analysis
-- **Smart Alerts** - Automated anomaly detection
-- **Predictive Analytics** - Forecast trends and patterns
-- **Natural Language Queries** - Ask questions in plain English
+### ⚡ **Real-Time Capabilities**
+- 🔄 **WebSocket Updates** - Live data synchronization
+- 📡 **Server-Sent Events** - Real-time notifications
+- 🚀 **Redis Caching** - Lightning-fast data access
+- 📊 **Live Charts** - Dynamic data visualizations
 
-### 🔐 Security & Authentication
-- **JWT Authentication** - Secure token-based auth
-- **Role-Based Access** - User permissions and roles
-- **Secure API** - Protected endpoints with middleware
-- **Session Management** - Automatic token refresh
+### 🔐 **Security & Authentication**
+- 🔑 **JWT Authentication** - Secure token-based auth
+- 🔄 **Refresh Tokens** - Seamless session management
+- 🌐 **OAuth2 Integration** - Google, GitHub, and more
+- 👥 **Role-Based Access Control** - Fine-grained permissions
+- 🛡️ **Rate Limiting** - API protection and abuse prevention
 
-### ⚡ Performance
-- **Fast Loading** - Optimized bundle size with Vite
-- **Lazy Loading** - Code splitting for better performance
-- **Caching** - Redis caching for API responses
-- **Database Optimization** - Efficient queries with SQLAlchemy
+### 📊 **Analytics & Monitoring**
+- 📈 **Interactive Charts** - Recharts with beautiful visualizations
+- 📉 **Real-Time Metrics** - System and application monitoring
+- 🎯 **Custom Dashboards** - Personalized data views
+- 📊 **Export Capabilities** - PDF, CSV, and Excel exports
+
+### 🛠️ **Developer Experience**
+- 🐳 **Docker Support** - Containerized development and deployment
+- 🔄 **CI/CD Pipeline** - Automated testing and deployment
+- 📝 **TypeScript** - Type-safe development
+- 🧪 **Comprehensive Tests** - Unit, integration, and E2E tests
+- 📚 **API Documentation** - Auto-generated Swagger/OpenAPI docs
 
 ---
 
-## � Quick Start
+## 🏗️ Tech Stack
+
+<table>
+<tr>
+<td>
+
+### Frontend
+- ⚛️ **React 18.3** - UI library
+- 📘 **TypeScript 5.6** - Type safety
+- ⚡ **Vite 6.0** - Build tool
+- 🎨 **TailwindCSS 4.0** - Styling
+- 🎭 **shadcn/ui** - Component library
+- ✨ **Framer Motion 11** - Animations
+- 🔄 **TanStack Query v5** - Data fetching
+- 🐻 **Zustand 5** - State management
+- 📊 **Recharts** - Charts
+- 🛣️ **React Router v7** - Routing
+
+</td>
+<td>
+
+### Backend
+- 🚀 **FastAPI 0.115** - Web framework
+- 🐍 **Python 3.12** - Language
+- 🗄️ **PostgreSQL 16** - Database
+- 🔴 **Redis 7** - Caching
+- 🔄 **SQLAlchemy 2.0** - ORM
+- 🔀 **Alembic** - Migrations
+- 🤖 **OpenAI API** - AI capabilities
+- 🦜 **LangChain** - AI orchestration
+- 🔌 **WebSockets** - Real-time
+- 📊 **Prometheus** - Monitoring
+
+</td>
+</tr>
+</table>
+
+### DevOps & Tools
+- 🐳 **Docker** - Containerization
+- 🔄 **GitHub Actions** - CI/CD
+- 🌐 **Nginx** - Reverse proxy
+- 📊 **Grafana** - Monitoring
+- 🔍 **Sentry** - Error tracking
+- 📝 **Swagger** - API docs
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### Dashboard - Light Mode
+![Dashboard Light](./frontend/public/screenshots/dashboard-light.png)
+
+### Dashboard - Dark Mode
+![Dashboard Dark](./frontend/public/screenshots/dashboard-dark.png)
+
+### AI Chat Assistant
+![AI Chat](./frontend/public/screenshots/ai-chat.png)
+
+### Analytics View
+![Analytics](./frontend/public/screenshots/analytics.png)
+
+### Mobile Responsive
+<img src="./frontend/public/screenshots/mobile-view.png" width="300" alt="Mobile View">
+
+</div>
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+ and npm
-- Python 3.11+
+- Node.js 20+
+- Python 3.12+
 - Docker & Docker Compose (optional)
+- PostgreSQL 16
+- Redis 7
 
 ### Option 1: Docker (Recommended)
 
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/codebytaki/fullstack-ai-dashboard.git
 cd fullstack-ai-dashboard
+
+# Copy environment files
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+
+# Edit .env files with your credentials
 
 # Start all services
 docker-compose up -d
 
-# Access the dashboard
+# Access the application
 # Frontend: http://localhost:5173
 # Backend API: http://localhost:8000
 # API Docs: http://localhost:8000/api/docs
@@ -91,8 +194,15 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Run backend
-python main.py
+# Set up environment
+cp .env.example .env
+# Edit .env with your credentials
+
+# Run database migrations
+alembic upgrade head
+
+# Start the server
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 #### Frontend Setup
@@ -103,39 +213,13 @@ cd frontend
 # Install dependencies
 npm install
 
-# Run development server
+# Set up environment
+cp .env.example .env
+# Edit .env with your API URL
+
+# Start development server
 npm run dev
 ```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React 18** - Modern UI library
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Next-generation build tool
-- **TailwindCSS** - Utility-first CSS framework
-- **Recharts** - Composable charting library
-- **Lucide React** - Beautiful icon library
-- **Zustand** - Lightweight state management
-- **React Query** - Data fetching and caching
-
-### Backend
-- **FastAPI** - Modern Python web framework
-- **SQLAlchemy** - SQL toolkit and ORM
-- **PostgreSQL** - Relational database
-- **Redis** - In-memory data store
-- **Pydantic** - Data validation
-- **JWT** - JSON Web Tokens for auth
-- **WebSockets** - Real-time communication
-- **OpenAI** - AI integration
-
-### DevOps
-- **Docker** - Containerization
-- **Docker Compose** - Multi-container orchestration
-- **Nginx** - Reverse proxy
-- **GitHub Actions** - CI/CD pipeline
 
 ---
 
@@ -143,70 +227,37 @@ npm run dev
 
 ```
 fullstack-ai-dashboard/
-├── frontend/                 # React frontend
+├── 📱 frontend/                 # React + TypeScript
 │   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── pages/           # Page components
-│   │   ├── hooks/           # Custom hooks
-│   │   ├── utils/           # Utility functions
-│   │   ├── App.tsx          # Main app component
-│   │   └── main.tsx         # Entry point
-│   ├── public/              # Static assets
-│   ├── Dockerfile           # Frontend container
-│   └── package.json         # Dependencies
+│   │   ├── components/         # Reusable components
+│   │   │   ├── ui/            # shadcn/ui components
+│   │   │   ├── layout/        # Layout components
+│   │   │   ├── dashboard/     # Dashboard widgets
+│   │   │   └── ai/            # AI components
+│   │   ├── features/          # Feature modules
+│   │   ├── hooks/             # Custom hooks
+│   │   ├── lib/               # Utilities
+│   │   ├── services/          # API services
+│   │   ├── store/             # State management
+│   │   └── types/             # TypeScript types
+│   └── public/
 │
-├── backend/                 # FastAPI backend
-│   ├── main.py              # Main application
-│   ├── models/              # Database models
-│   ├── routes/              # API routes
-│   ├── services/            # Business logic
-│   ├── Dockerfile           # Backend container
-│   └── requirements.txt     # Python dependencies
+├── 🔧 backend/                  # FastAPI + Python
+│   ├── app/
+│   │   ├── api/               # API routes
+│   │   ├── core/              # Core functionality
+│   │   ├── db/                # Database
+│   │   ├── models/            # SQLAlchemy models
+│   │   ├── schemas/           # Pydantic schemas
+│   │   ├── services/          # Business logic
+│   │   └── utils/             # Utilities
+│   ├── alembic/               # Migrations
+│   └── tests/                 # Tests
 │
-├── docker-compose.yml       # Docker orchestration
-├── nginx/                   # Nginx configuration
-└── README.md               # Documentation
+├── 🐳 docker/                   # Docker configs
+├── 📚 docs/                     # Documentation
+└── 🔄 .github/workflows/        # CI/CD
 ```
-
----
-
-## 📊 API Endpoints
-
-### Authentication
-- `POST /api/auth/login` - User login
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/refresh` - Refresh token
-
-### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard statistics
-- `GET /api/analytics` - Get analytics data
-- `GET /api/metrics` - Get system metrics
-
-### AI
-- `GET /api/ai/insights` - Get AI-powered insights
-- `POST /api/ai/query` - Ask AI a question
-
-### Users
-- `GET /api/users` - Get all users
-- `GET /api/users/{id}` - Get user by ID
-- `PUT /api/users/{id}` - Update user
-- `DELETE /api/users/{id}` - Delete user
-
-### WebSocket
-- `WS /ws` - Real-time updates
-
----
-
-## 🎨 Screenshots
-
-### Dashboard Overview
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
-
-### Dark Mode
-![Dark Mode](https://via.placeholder.com/800x400?text=Dark+Mode+Screenshot)
-
-### Analytics
-![Analytics](https://via.placeholder.com/800x400?text=Analytics+Screenshot)
 
 ---
 
@@ -214,26 +265,79 @@ fullstack-ai-dashboard/
 
 ### Environment Variables
 
-Create `.env` file in backend directory:
-
+#### Backend (.env)
 ```env
 # Database
-DATABASE_URL=postgresql://postgres:password@localhost:5432/dashboard_db
+DATABASE_URL=postgresql://user:password@localhost:5432/dashboard
 
 # Redis
-REDIS_URL=redis://localhost:6379/0
+REDIS_URL=redis://localhost:6379
 
-# JWT
+# Security
 SECRET_KEY=your-secret-key-here
 ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-# AI
-OPENAI_API_KEY=your-openai-api-key
+# OpenAI
+OPENAI_API_KEY=sk-your-openai-key
 
-# CORS
-ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+# OAuth (Optional)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
 ```
+
+#### Frontend (.env)
+```env
+VITE_API_URL=http://localhost:8000
+VITE_WS_URL=ws://localhost:8000
+VITE_APP_NAME=AI Dashboard
+```
+
+---
+
+## 📚 API Documentation
+
+### Authentication Endpoints
+
+```http
+POST /api/v1/auth/register
+POST /api/v1/auth/login
+POST /api/v1/auth/refresh
+POST /api/v1/auth/logout
+GET  /api/v1/auth/me
+```
+
+### Dashboard Endpoints
+
+```http
+GET  /api/v1/dashboard/stats
+GET  /api/v1/dashboard/analytics
+GET  /api/v1/dashboard/metrics
+```
+
+### AI Endpoints
+
+```http
+POST /api/v1/ai/chat
+POST /api/v1/ai/analyze
+GET  /api/v1/ai/insights
+```
+
+### WebSocket
+
+```javascript
+// Connect to WebSocket
+const ws = new WebSocket('ws://localhost:8000/ws');
+
+// Listen for updates
+ws.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  console.log('Real-time update:', data);
+};
+```
+
+**Full API documentation available at:** http://localhost:8000/api/docs
 
 ---
 
@@ -243,57 +347,65 @@ ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
 
 ```bash
 cd backend
-pytest tests/ -v --cov=.
+
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=app --cov-report=html
+
+# Run specific test file
+pytest tests/test_auth.py
 ```
 
 ### Frontend Tests
 
 ```bash
 cd frontend
+
+# Run tests
 npm run test
+
+# Run with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
 ```
 
 ---
 
-## 📦 Deployment
+## 🚀 Deployment
 
-### Production Build
+### Docker Deployment
 
 ```bash
-# Build frontend
-cd frontend
-npm run build
-
-# Build Docker images
+# Build production images
 docker-compose -f docker-compose.prod.yml build
 
 # Deploy
 docker-compose -f docker-compose.prod.yml up -d
 ```
 
-### Environment Setup
+### Manual Deployment
 
-1. Set production environment variables
-2. Configure database connection
-3. Set up SSL certificates
-4. Configure Nginx reverse proxy
-5. Enable monitoring and logging
+See [DEPLOYMENT.md](./docs/DEPLOYMENT.md) for detailed deployment instructions.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please read our [Contributing Guidelines](./docs/CONTRIBUTING.md) first.
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ---
 
-## � License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -301,26 +413,33 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- React team for the amazing framework
-- FastAPI for the modern Python web framework
-- TailwindCSS for the utility-first CSS
-- Recharts for beautiful visualizations
-- OpenAI for AI capabilities
+- [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
+- [React](https://react.dev/) - UI library
+- [shadcn/ui](https://ui.shadcn.com/) - Beautiful component library
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS
+- [OpenAI](https://openai.com/) - AI capabilities
+- [LangChain](https://python.langchain.com/) - AI orchestration
 
 ---
 
-## � Contact
+## 📧 Contact
 
-Taki - [@codebytaki](https://github.com/codebytaki)
+**Taki** - [@codebytaki](https://github.com/codebytaki)
 
 Project Link: [https://github.com/codebytaki/fullstack-ai-dashboard](https://github.com/codebytaki/fullstack-ai-dashboard)
 
 ---
 
+## 🌟 Show Your Support
+
+Give a ⭐️ if this project helped you!
+
+---
+
 <div align="center">
 
-**Built with ❤️ using React, TypeScript, FastAPI & TailwindCSS**
+**Built with ❤️ using React, TypeScript, FastAPI, and AI**
 
-⭐ Star this repo if you find it helpful!
+[⬆ Back to Top](#-ai-powered-full-stack-dashboard)
 
 </div>

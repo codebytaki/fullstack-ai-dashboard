@@ -1,55 +1,106 @@
 """
 Full-Stack AI Dashboard - FastAPI Backend
+Production-Grade API with Authentication, AI Features, and Real-time Updates
 """
 
-from fastapi import FastAPI, HTTPException, Depends, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, Depends, WebSocket, WebSocketDisconnect, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-from typing import List, Optional, Dict
+from pydantic import BaseModel, EmailStr
+from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
 import asyncio
 from loguru import logger
 import os
+import sys
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
 
+# Create logs directory if it doesn't exist
+logs_dir = Path("logs")
+logs_dir.mkdir(exist_ok=True)
+
+# Configure logger
+logger.remove()  # Remove default handler
+logger.add(sys.stderr, level="INFO")  # Console output
+logger.add(
+    "logs/api_{time}.log",
+    rotation="10 MB",
+    retention="30 days",
+    level="DEBUG",
+    backtrace=True,
+    diagnose=True
+)
+
 # Initialize FastAPI app
 app = FastAPI(
     title="AI Dashboard API",
-    description="Full-Stack AI Dashboard Backend",
+    description="Production-Grade Full-Stack AI Dashboard Backend with Authentication, Real-time Updates, and AI Features",
     version="2.0.0",
     docs_url="/api/docs",
-    redoc_url="/api/redoc"
+    redoc_url="/api/redoc",
+    openapi_tags=[
+        {"name": "health", "description": "Health check endpoints"},
+        {"name": "auth", "description": "Authentication and authorization"},
+        {"name": "dashboard", "description": "Dashboard statistics and metrics"},
+        {"name": "analytics", "description": "Analytics and data visualization"},
+        {"name": "ai", "description": "AI-powered features and insights"},
+        {"name": "users", "description": "User management"},
+        {"name": "websocket", "description": "Real-time WebSocket connections"},
+    ]
 )
 
 # CORS middleware
+cors_origins = os.getenv("BACKEND_CORS_ORIGINS", "http://localhost:5173").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify exact origins
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Configure logger
-logger.add("logs/api_{time}.log", rotation="10 MB", retention="30 days")
+# GZip compression middleware
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+logger.info("🚀 AI Dashboard API Starting...")
 
 
-# Models
+# ============================================================================
+# MODELS
+# ============================================================================
+
 class User(BaseModel):
     id: Optional[int] = None
     username: str
-    email: str
+    email: EmailStr
     full_name: Optional[str] = None
     is_active: bool = True
+    role: str = "user"
+    created_at: Optional[datetime] = None
 
 
 class LoginRequest(BaseModel):
     username: str
     password: str
+
+
+class LoginResponse(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str = "bearer"
+    user: User
+
+
+class RegisterRequest(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+    full_name: Optional[str] = None
 
 
 class DashboardStats(BaseModel):
@@ -60,15 +111,19 @@ class DashboardStats(BaseModel):
     uptime: str
     cpu_usage: float
     memory_usage: float
+    response_time: float
+    error_rate: float
 
 
 class AIInsight(BaseModel):
     id: str
     title: str
     description: str
-    severity: str
+    severity: str  # critical, warning, info, success
     timestamp: datetime
     category: str
+    action_required: bool = False
+    confidence: float = 0.0
 
 
 class AnalyticsData(BaseModel):
@@ -76,28 +131,112 @@ class AnalyticsData(BaseModel):
     users: int
     requests: int
     ai_queries: int
+    revenue: Optional[float] = 0.0
+    conversion_rate: Optional[float] = 0.0
 
 
-# WebSocket connection manager
+class AIQueryRequest(BaseModel):
+    query: str
+    context: Optional[Dict[str, Any]] = None
+    user_id: Optional[str] = None
+
+
+class AIQueryResponse(BaseModel):
+    query: str
+    response: str
+    confidence: float
+    timestamp: datetime
+    sources: Optional[List[str]] = []
+    suggestions: Optional[List[str]] = []
+
+
+class SystemMetrics(BaseModel):
+    cpu: Dict[str, Any]
+    memory: Dict[str, Any]
+    disk: Dict[str, Any]
+    network: Dict[str, Any]
+    timestamp: datetime
+
+
+# ============================================================================
+# WEBSOCKET CONNECTION MANAGER
+# ============================================================================
+
 class ConnectionManager:
+    """Enhanced WebSocket connection manager with user tracking"""
+    
     def __init__(self):
-        self.active_connections: List[WebSocket] = []
+        self.active_connections: Dict[str, List[WebSocket]] = {}
+        self.connection_count = 0
 
-    async def connect(self, websocket: WebSocket):
+    async def connect(self, websocket: WebSocket, user_id: str = "anonymous"):
+        """Connect a WebSocket client"""
         await websocket.accept()
-        self.active_connections.append(websocket)
-        logger.info(f"WebSocket connected. Total connections: {len(self.active_connections)}")
+        
+        if user_id not in self.active_connections:
+            self.active_connections[user_id] = []
+        
+        self.active_connections[user_id].append(websocket)
+        self.connection_count += 1
+        
+        logger.info(f"✅ WebSocket connected: {user_id} | Total: {self.connection_count}")
+        
+        # Send welcome message
+        await websocket.send_json({
+            "type": "connection",
+            "status": "connected",
+            "user_id": user_id,
+            "timestamp": datetime.now().isoformat()
+        })
 
-    def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
-        logger.info(f"WebSocket disconnected. Total connections: {len(self.active_connections)}")
+    def disconnect(self, websocket: WebSocket, user_id: str = "anonymous"):
+        """Disconnect a WebSocket client"""
+        if user_id in self.active_connections:
+            if websocket in self.active_connections[user_id]:
+                self.active_connections[user_id].remove(websocket)
+                self.connection_count -= 1
+                
+                # Clean up empty user lists
+                if not self.active_connections[user_id]:
+                    del self.active_connections[user_id]
+                
+                logger.info(f"❌ WebSocket disconnected: {user_id} | Total: {self.connection_count}")
+
+    async def send_personal_message(self, message: dict, user_id: str):
+        """Send message to specific user"""
+        if user_id in self.active_connections:
+            for connection in self.active_connections[user_id]:
+                try:
+                    await connection.send_json(message)
+                except Exception as e:
+                    logger.error(f"Error sending personal message to {user_id}: {str(e)}")
 
     async def broadcast(self, message: dict):
-        for connection in self.active_connections:
-            try:
-                await connection.send_json(message)
-            except Exception as e:
-                logger.error(f"Error broadcasting message: {str(e)}")
+        """Broadcast message to all connected clients"""
+        disconnected = []
+        
+        for user_id, connections in self.active_connections.items():
+            for connection in connections:
+                try:
+                    await connection.send_json(message)
+                except Exception as e:
+                    logger.error(f"Error broadcasting to {user_id}: {str(e)}")
+                    disconnected.append((connection, user_id))
+        
+        # Clean up disconnected clients
+        for connection, user_id in disconnected:
+            self.disconnect(connection, user_id)
+    
+    def get_stats(self) -> Dict[str, Any]:
+        """Get connection statistics"""
+        return {
+            "total_connections": self.connection_count,
+            "unique_users": len(self.active_connections),
+            "connections_per_user": {
+                user_id: len(connections) 
+                for user_id, connections in self.active_connections.items()
+            }
+        }
 
 
 manager = ConnectionManager()

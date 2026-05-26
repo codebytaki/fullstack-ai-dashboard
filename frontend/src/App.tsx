@@ -28,7 +28,7 @@ function App() {
 
     const fetchDashboardStats = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/dashboard/stats')
+            const response = await fetch('/api/dashboard/stats')
             const data = await response.json()
             setStats(data)
             setLoading(false)

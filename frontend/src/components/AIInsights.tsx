@@ -18,7 +18,7 @@ export default function AIInsights() {
 
     const fetchInsights = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/ai/insights')
+            const response = await fetch('/api/ai/insights')
             const data = await response.json()
             setInsights(data)
         } catch (error) {
