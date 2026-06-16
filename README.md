@@ -1,17 +1,22 @@
-# 🚀 NexusAI Dashboard - Professional Full-Stack AI Analytics Platform
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f6feb,100:0d1117&height=180&section=header&text=NexusAI%20Dashboard&fontSize=42&fontColor=58a6ff&fontAlignY=38&desc=Full-Stack%20AI%20Analytics%20Platform&descSize=17&descAlignY=58&descColor=8b949e&animation=fadeIn" />
+
+</div>
 
 <div align="center">
 
-![Stack](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi)
-![Stack](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
-![Stack](https://img.shields.io/badge/TypeScript-5.2-3178C6?style=for-the-badge&logo=typescript)
-![Stack](https://img.shields.io/badge/TailwindCSS-3.3-06B6D4?style=for-the-badge&logo=tailwindcss)
-![Stack](https://img.shields.io/badge/Zustand-4-000000?style=for-the-badge)
-![Stack](https://img.shields.io/badge/TanStack_Query-5-FF4154?style=for-the-badge)
+[![CI](https://github.com/codebytaki/fullstack-ai-dashboard/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/codebytaki/fullstack-ai-dashboard/actions/workflows/ci-cd.yml)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/codebytaki/fullstack-ai-dashboard?style=flat-square&color=yellow)](https://github.com/codebytaki/fullstack-ai-dashboard/stargazers)
 
-**A production-ready, enterprise-grade AI analytics dashboard with professional UI design inspired by GitHub, Vercel, and Linear.**
+**Production-ready AI analytics dashboard with JWT auth, real-time WebSocket, 4 themes, AI chat assistant, and beautiful charts.**
 
-[Features](#-features) • [Screenshots](#-screenshots) • [Quick Start](#-quick-start) • [Tech Stack](#-tech-stack) • [Documentation](#-documentation)
+[✨ Features](#-features) · [📸 Screenshots](#-screenshots) · [🚀 Quick Start](#-quick-start) · [🛠 Tech Stack](#️-tech-stack) · [📖 Docs](#-documentation)
 
 </div>
 
@@ -489,5 +494,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **⭐ Star this repo if you find it useful!**
 
 Made with ❤️ by [Taki](https://github.com/codebytaki)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f6feb,100:0d1117&height=80&section=footer" />
 
 </div>
