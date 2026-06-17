@@ -7,8 +7,8 @@ import { TrendingUp } from 'lucide-react'
 import { dashboardAPI } from '../lib/api'
 import { format, parseISO } from 'date-fns'
 
-interface TooltipPayloadItem { name: string; value: number; color: string }
-interface TooltipProps { active?: boolean; payload?: TooltipPayloadItem[]; label?: string }
+interface TooltipEntry { name: string; value: number; color: string }
+interface TooltipProps { active?: boolean; payload?: TooltipEntry[]; label?: string }
 
 const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
     if (!active || !payload?.length) return null
@@ -31,8 +31,8 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
     )
 }
 
-interface LegendPayloadItem { value: string; color: string }
-interface LegendProps { payload?: LegendPayloadItem[] }
+interface LegendEntry { value: string; color: string }
+interface LegendProps { payload?: LegendEntry[] }
 
 const CustomLegend = ({ payload }: LegendProps) => (
     <div className="flex items-center justify-center gap-5 mt-3">

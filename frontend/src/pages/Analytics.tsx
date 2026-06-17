@@ -5,11 +5,11 @@ import {
 } from 'recharts'
 import { DollarSign, TrendingUp, Users, BarChart3 } from 'lucide-react'
 import { dashboardAPI } from '../lib/api'
-import type { AnalyticsData } from '../types'
 import { format, parseISO } from 'date-fns'
+import type { AnalyticsData } from '../types'
 
-interface TooltipPayloadItem { name: string; value: number | string; color: string }
-interface TooltipProps { active?: boolean; payload?: TooltipPayloadItem[]; label?: string }
+interface TooltipEntry { name: string; value: number | string; color: string }
+interface TooltipProps { active?: boolean; payload?: TooltipEntry[]; label?: string }
 
 const TT = ({ active, payload, label }: TooltipProps) => {
     if (!active || !payload?.length) return null
