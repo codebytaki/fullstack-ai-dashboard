@@ -5,15 +5,19 @@ import {
 } from 'recharts'
 import { DollarSign, TrendingUp, Users, BarChart3 } from 'lucide-react'
 import { dashboardAPI } from '../lib/api'
+import type { AnalyticsData } from '../types'
 import { format, parseISO } from 'date-fns'
 
-const TT = ({ active, payload, label }: any) => {
+interface TooltipPayloadItem { name: string; value: number | string; color: string }
+interface TooltipProps { active?: boolean; payload?: TooltipPayloadItem[]; label?: string }
+
+const TT = ({ active, payload, label }: TooltipProps) => {
     if (!active || !payload?.length) return null
     return (
         <div className="rounded-xl px-4 py-3 shadow-modal"
             style={{ background: 'var(--bg-overlay)', border: '1px solid var(--border-strong)', minWidth: 150 }}>
             <p className="text-2xs text-ink-muted mb-2">{label}</p>
-            {payload.map((e: any) => (
+            {payload.map((e) => (
                 <div key={e.name} className="flex items-center justify-between gap-4 mb-1 last:mb-0">
                     <div className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full" style={{ background: e.color }} />
@@ -37,7 +41,7 @@ export default function Analytics() {
         refetchInterval: 30_000,
     })
 
-    const data = analytics?.map(d => ({
+    const data: AnalyticsData[] = analytics?.map(d => ({
         ...d,
         date: format(parseISO(d.date), 'MMM d'),
         revenue: Math.round(d.revenue),
