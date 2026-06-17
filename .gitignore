@@ -53,6 +53,9 @@ frontend/.env.local
 frontend/.env.production
 frontend/node_modules/
 *.tsbuildinfo
+# Un-ignore frontend source lib (overrides the Python lib/ rule above)
+!frontend/src/lib/
+!frontend/src/lib/**
 
 # IDEs
 .vscode/
