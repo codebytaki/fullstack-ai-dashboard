@@ -27,7 +27,7 @@ langchain==0.3.14
 langchain-openai==0.2.14
 langchain-community==0.3.14
 chromadb==0.5.23
-sentence-transformers==3.3.1
+sentence-transformers==5.6.0
 
 # WebSocket
 websockets==14.1
